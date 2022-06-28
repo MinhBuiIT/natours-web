@@ -1,0 +1,121 @@
+.navigation {
+    &__input {
+        display: none;
+    }
+    &__btn {
+        position: fixed;
+        top: 4.5rem;
+        right: 5.5rem;
+        width: 6.6rem;
+        height: 6.6rem;
+        background-color: $color-text-light;
+        border-radius: 50%;
+        z-index: 2000;
+        cursor: pointer;
+        box-shadow: 0.5rem 0.7rem 1.2rem rgba($color-dark, .1);
+    }
+    &__backgr{
+        position: fixed;
+        top: 4.6rem;
+        right: 5.7rem;
+        width: 6rem;
+        height: 6rem;
+        border-radius: 50%;
+        background: radial-gradient($color-green-light,$color-green-dark);
+        z-index: 1000;
+        transition: transform 0.8s cubic-bezier(0.65, 0, 0.35, 1);
+    }
+    &__wrap{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0rem;
+        z-index: 1500;
+        opacity: 0;
+        width: 0;
+        transition: all 0.8s cubic-bezier(.43,-0.07,.41,1.41);
+    }
+    &__list {
+        @include center_position;
+        list-style: none;
+        text-align: center;
+
+    }
+    &__item {
+        margin: 2rem;
+    }
+    &__link {
+        visibility: hidden;
+        display: inline-block;
+        text-decoration: none;
+        font-size: 3rem;
+        text-transform: uppercase;
+        color: $color-text-light;
+        font-weight: 300;
+        padding: 0.5rem 2rem;
+        background: linear-gradient(120deg,transparent 50%, $color-text-light 50%);
+        background-size: 222%;
+        transition: all 0.25s linear;
+        white-space: nowrap;
+        &:hover {
+            background-position: right;
+            color: $color-primary;
+        }
+        span {
+            margin-right: 2rem;
+        }
+    }
+    &__input:checked ~ &__backgr {
+        transform: scale(90);
+    }
+    &__input:checked ~ &__wrap {
+        width: 100%;
+        opacity: 1;
+
+    }
+    &__input:checked ~ &__wrap &__link{
+        visibility: visible;
+    }
+    //Icon
+    &__icon {
+        @include center_position;
+        &,
+        &::after,
+        &::before {
+            width: 3rem;
+            height: 2px;
+            background-color: $color-text-dark-huge;
+        }
+        &::after,
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            transition: all 0.25s ease-in-out;
+        }
+        &::before {
+            top: -0.8rem;
+        }
+        &::after {
+            top: 0.8rem;
+        }
+    }
+    &__btn:hover &__icon::before {
+        top: -1rem;
+    }
+    &__btn:hover &__icon::after {
+        top: 1rem;
+    }
+    &__input:checked + &__btn &__icon{
+        background-color: transparent;
+    }
+    &__input:checked + &__btn &__icon::before{
+        top: 0;
+        transform: rotate(135deg);
+    }
+    &__input:checked + &__btn &__icon::after{
+        top: 0;
+        transform: rotate(-135deg);
+    }
+}

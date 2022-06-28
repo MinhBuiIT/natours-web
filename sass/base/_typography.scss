@@ -1,0 +1,89 @@
+body {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    color: $color-text-dark;
+}
+
+.header__introduce {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: $color-text-light;
+    text-transform: uppercase;
+    backface-visibility: hidden;
+    text-align: center;
+
+    &--heading-primary {
+        margin-bottom: 6.8rem;
+    }
+
+    &--title {
+        font-size: 6rem;
+        letter-spacing: 3.5rem;
+        font-weight: 400;
+        animation-name: MoveinLeft;
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
+        text-align: center;
+        @include respon(phone) {
+            font-size: 5rem;
+            letter-spacing: 1.2rem;
+            margin-bottom: 1rem;
+        }
+    }
+
+    &--des {
+        font-size: 2rem;
+        letter-spacing: 1.75rem;
+        font-weight: 700;
+        animation-name: MoveinRight;
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
+        @include respon(phone) {
+            font-size: 1.6rem;
+            letter-spacing: .5rem;
+        }
+    }
+}
+// section-about
+.heading-secondary {
+    position: relative;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    font-weight: 700;
+    background: linear-gradient( to right, $color-green-light, $color-green-dark);
+    display: inline-block;
+    -webkit-background-clip: text;
+    color: transparent;
+    transition: .2s linear;
+    @include respon(phone) {
+        font-size: 2.5rem;
+        letter-spacing: 0rem;
+        max-width: 80vw;
+
+    }
+    &:hover {
+        transform: skewY(2deg) skewX(15deg) scale(1.1);
+        text-shadow: .2rem .6rem .6rem rgba($color-dark,.1);
+    }
+}
+.heading-third {
+    font-size: $default-font-size;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: $color-text-dark;
+}
+.about-content {
+    width: fit-content;
+    &__para{
+        font-size: 1.5rem;
+        line-height: 2.7rem;
+        font-weight: 500;
+        margin-bottom: 3rem;
+        color: lighten($color-text-dark,5%);
+    }
+}
+

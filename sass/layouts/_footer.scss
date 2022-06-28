@@ -1,0 +1,42 @@
+footer {
+    padding: 10rem 0 12rem;
+    @include respon(tablet-por) {
+        padding: 5rem 0 2rem;
+    }
+    background-color: $color-text-dark-huge;
+    .img-wrap {
+        &__photo {
+            display: block;
+            margin: 0 auto;
+        }
+    }
+}
+.infor-list {
+    list-style: none;
+    padding-top: 1.6rem;
+    border-top: 1px solid $color-text-dark;
+    display: inline-block;
+    @include respon(tablet-por) {
+        text-align: center;
+        padding: 1rem;
+    }
+    &__item {
+        display: inline-block;
+        & + & {
+            margin-left: 1rem;
+        }
+        @include respon(tablet-por) {
+            padding: 1rem;
+        }
+    }
+}
+.des {
+    width: fit-content;
+    padding-top: 1.6rem;
+    border-top: 1px solid $color-text-dark;
+    &__para {
+        font-size: 1.4rem;
+        color: $color-text-light;
+        font-weight: 500;
+    }
+}

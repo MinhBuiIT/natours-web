@@ -1,0 +1,68 @@
+.section-about {
+    background-color: $color-light-dark;
+    padding: 30rem 0;
+    margin-top: -20vh;
+    margin-bottom: -20vh;
+    @include respon(tablet-por) {
+       padding: 25rem 0 20rem;
+    }
+}
+.section-features {
+    height: 100vh;
+    padding: 40rem 0;
+    background-image:linear-gradient(to right,rgba($color-green-light,.8) 20%,rgba($color-primary,.8) 80%),url("../img/nat-4.jpg");
+    background-position: top;
+    background-size: cover;
+    transform: skewY(-7deg);
+    position: relative;
+    @include respon(tablet-por) {
+        padding: 70rem 0;
+
+    }
+    & > * {
+        transform: skewY(7deg);
+    }
+    &__wrap {
+        position: absolute;
+        top:25rem;
+        left: 0;
+        right: 0;
+        z-index: 10;
+        @include respon(tablet-por) {
+            top: 10rem;
+        }
+    }
+}
+.section-tours {
+    padding: 30rem 0 ;
+    background-color:  $color-light-dark;
+    margin-top: -10rem;
+    @include respon(tablet-por) {
+        padding: 22rem 0 15rem;
+    }
+}
+.section-stories {
+    padding: 15rem 0;
+    position: relative;
+}
+.section-book {
+    padding: 25rem 0;
+    background-image: linear-gradient( to right bottom, $color-green-light, $color-primary);
+    @include respon(tablet-por) {
+        padding: 15rem 0;
+    }
+    .book {
+        height: 52rem;
+        background:linear-gradient(105deg,rgba($color-text-light,0.8) 50%,transparent 50%), url('../img/nat-10.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        @include respon(tablet-land) {
+            background:linear-gradient(105deg,rgba($color-text-light,0.8) 70%,transparent 70%), url('../img/nat-10.jpg');
+        }
+        @include respon(tablet-por) {
+            height: auto;
+            background:linear-gradient(to right,rgba($color-text-light,0.8) 100%,rgba($color-text-light,0.8) 100%), url('../img/nat-10.jpg');
+        }
+    }
+}

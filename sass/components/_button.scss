@@ -1,0 +1,119 @@
+.btn {
+    text-transform: uppercase;
+    &,
+    &:link,
+    &:visited {
+        text-decoration: none;
+        font-size: 1.6rem;
+        padding: 1.5rem 4rem;
+        display: inline-block;
+        border-radius: 10rem;
+        position: relative;
+        transition: all 0.15s linear;
+        border: none;
+        outline: none;
+        @include respon(tablet-por) {
+            padding: 1rem 3.5rem;
+        }
+    }
+
+    &--white {
+        background-color: $color-text-light;
+        color: $color-text-dark;
+
+        &::after {
+            content: "";
+            background-color: $color-text-light;
+        }
+    }
+    &--green {
+        background-color: $color-primary;
+        color: $color-text-light;
+
+        &::after {
+            content: "";
+            background-color: $color-primary;
+        }
+    }
+    
+
+    &:hover {
+        transform: translateY(-0.3rem);
+        box-shadow: 0 0.8rem 1.2rem rgba($color-dark, 0.2);
+
+        &::after {
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+        }
+    }
+
+    &:active {
+        transform: translateY(-1px);
+        box-shadow: 0 0.4rem 0.6rem rgba($color-dark, 0.1);
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 100px;
+        z-index: -1;
+        transition: all 0.3s ease-out;
+    }
+
+    &--down {
+        animation: MoveDownUp 1s ease-out 0.75s backwards;
+    }
+    &--center {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        &:hover {
+            transform: translateX(-50%) translateY(0);
+        }
+    }
+}
+.btn-small {
+    position: relative;
+    &:link,
+    &:visited {
+        display: inline-block;
+        text-decoration: none;
+        font-size:$default-font-size;
+        letter-spacing: .1px;
+        font-weight: 500;
+        padding: .6rem .4rem;
+        border-bottom: 1px solid $color-primary;
+        transition: all 0.2s linear;
+    }
+    &--green {
+        background: linear-gradient(to right,$color-green-dark,$color-primary 40%);
+        -webkit-background-clip: text;
+        color: transparent;
+        transition: all 0.15s linear;
+        &:hover {
+            background: $color-primary;
+            color: #fff;
+            transform: translateY(-.5rem);
+            box-shadow: rgba($color-dark, 0.2) .2rem .6px .8rem;
+        }
+        &:active {
+            transform: translateY(0);
+            box-shadow: rgba($color-dark, 0.2) .2rem .6px .8rem;
+        }
+    }
+    &--center {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        &:hover {
+            transform: translateX(-50%) translateY(-0.5rem);
+        }
+        &:active {
+            transform: translateX(-50%) translateY(0);
+        }
+    }
+}
